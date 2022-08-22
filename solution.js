@@ -52,10 +52,15 @@ console.log(isEqual(data5, data52)); // false
 // //6
 const data6 = { a: { b: [1, 2, 3] } };
 // //write your code here
-const invoke = (arg, str, str1, arr) => {};
+const invoke = (arg, str, str1, arr) => {
+  const strtoArr = str.split(".");
+  const arOnRule = arg[strtoArr[0]][strtoArr[1]];
+
+  return str1 === "splice" && arOnRule.splice(arr[0], arr[1]);
+};
 console.log(invoke(data6, "a.b", "splice", [1, 2])); // [2, 3]
 
-// //7
+// //7arr
 // const data7 = { a: { b: undefined } };
 // //write your code here
 // console.log(isEmptyDeep(data7));
